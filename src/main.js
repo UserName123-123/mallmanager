@@ -3,14 +3,22 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import '@/assets/css/reset.css'
 import App from './App'
 import router from './router'
-import axios from 'axios'
-Vue.prototype.axios = axios
+import MyHttpServer from '@/plugins/http.js'
+import moment from 'moment'
 
 Vue.config.productionTip = false
 
+// 使用Vue插件
 Vue.use(ElementUI)
+Vue.use(MyHttpServer)
+
+// 全局过滤器处理日期格式
+Vue.filter('fmtdate', (val) => {
+  return moment(val).format('YYYY-MM-HH')
+})
 
 /* eslint-disable no-new */
 new Vue({
