@@ -8,6 +8,7 @@ import App from './App'
 import router from './router'
 import MyHttpServer from '@/plugins/http.js'
 import moment from 'moment'
+import myBread from '@/components/cuscom/myBread'
 
 Vue.config.productionTip = false
 
@@ -19,7 +20,7 @@ Vue.use(MyHttpServer)
 Vue.filter('fmtdate', (val) => {
   return moment(val).format('YYYY-MM-HH')
 })
-
+Vue.component(myBread.name, myBread)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
