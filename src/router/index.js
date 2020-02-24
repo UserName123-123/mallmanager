@@ -5,6 +5,7 @@ import Home from '@/components/home/home.vue'
 import Users from '@/components/users/users.vue'
 import Right from '@/components/rights/right.vue'
 import Role from '@/components/rights/role.vue'
+import Cate from '@/components/goods/Cate.vue'
 import Welcome from '@/components/welcome.vue'
 import { Message } from 'element-ui'
 Vue.use(Router)
@@ -22,7 +23,8 @@ const router = new Router({
         { name: 'users', path: '/users', component: Users },
         { name: 'welcome', path: '/welcome', component: Welcome },
         { name: 'rights', path: '/rights', component: Right },
-        { name: 'roles', path: '/roles', component: Role }
+        { name: 'roles', path: '/roles', component: Role },
+        { name: 'categories', path: '/categories', component: Cate }
       ]
     }
   ]
