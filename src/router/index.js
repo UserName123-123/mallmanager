@@ -6,6 +6,9 @@ import Users from '@/components/users/users.vue'
 import Right from '@/components/rights/right.vue'
 import Role from '@/components/rights/role.vue'
 import Cate from '@/components/goods/Cate.vue'
+import Goods from '@/components/goods/goodslist.vue'
+import GoodsAdd from '@/components/goods/goodsadd.vue'
+import CateParams from '@/components/goods/cateparams.vue'
 import Welcome from '@/components/welcome.vue'
 import { Message } from 'element-ui'
 Vue.use(Router)
@@ -14,7 +17,6 @@ const router = new Router({
   routes: [
     { path: '/', redirect: 'login' },
     { name: 'login', path: '/login', component: Login },
-
     {
       name: 'home',
       path: '/home',
@@ -24,7 +26,10 @@ const router = new Router({
         { name: 'welcome', path: '/welcome', component: Welcome },
         { name: 'rights', path: '/rights', component: Right },
         { name: 'roles', path: '/roles', component: Role },
-        { name: 'categories', path: '/categories', component: Cate }
+        { name: 'categories', path: '/categories', component: Cate },
+        { name: 'goods', path: '/goods', component: Goods },
+        { name: 'goodsadd', path: '/goodsadd', component: GoodsAdd },
+        { name: 'params', path: '/params', component: CateParams }
       ]
     }
   ]
@@ -34,7 +39,7 @@ const router = new Router({
 router.beforeEach((to, form, next) => {
   const token = sessionStorage.getItem('token')
   if (to.path === '/login') next()
-  if (!token) {
+  if (!token && to.path !== '/login') {
     Message.warning('请先登录')
     return next('/login')
   }

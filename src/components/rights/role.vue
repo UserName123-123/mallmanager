@@ -5,7 +5,7 @@
     <my-bread level1="权限管理" level2="角色列表"></my-bread>
     <el-row class="addrolebtn">
         <el-col>
-            <el-button plain>添加角色</el-button>
+            <el-button type="success">添加角色</el-button>
         </el-col>
     </el-row>
     <el-table :data="rolelist" border style="width: 100%;margin-top: 20px;">

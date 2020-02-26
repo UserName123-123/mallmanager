@@ -38,7 +38,7 @@
         </el-table-column>
     </el-table>
     <!-- 分页 -->
-    <el-pagination style="margin-top:20px;" hide-on-single-page @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="queryInfo.pagenum" :page-sizes="[5, 10, 20, 30]" :page-size="5" layout="total, sizes, prev, pager, next, jumper" :total="total">
+    <el-pagination style="margin-top:20px;" hide-on-single-page @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="queryInfo.pagenum" :page-sizes="[5, 10, 20, 30]" :page-size="queryInfo.pagesize" layout="total, sizes, prev, pager, next, jumper" :total="total" background>
     </el-pagination>
     <!-- 添加用户的对话框 -->
     <el-dialog title="添加用户" :visible.sync="dialogFormVisibleAdd" @close="addDialogClosed()">
